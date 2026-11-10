@@ -46,7 +46,7 @@ class Quince_Product_Section extends Module
     {
         $this->name = 'quince_product_section';
         $this->tab = 'front_office_features';
-        $this->version = '0.1.0';
+        $this->version = '0.1.1';
         $this->author = 'Quince Project';
         $this->need_instance = 0;
         $this->ps_versions_compliancy = ['min' => '9.0.0', 'max' => '9.99.99'];
@@ -109,7 +109,7 @@ class Quince_Product_Section extends Module
 
         $hook = new Hook();
         $hook->name = self::HOOK_SECTION;
-        $hook->title = 'Quince — polecane produkty pod listą';
+        $hook->title = 'Quince: polecane produkty pod listą';
         $hook->description = 'Rząd produktów pod listą na stronie kategorii, marki, wyników wyszukiwania,'
             . ' bestsellerów, nowości, promocji i dostawcy. Miejsce stawia element listingu w panelu silnika.';
         $hook->position = false;

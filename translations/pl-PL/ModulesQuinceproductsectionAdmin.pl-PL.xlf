@@ -184,6 +184,64 @@
         <target>Na telefonie rząd zawsze przesuwa się palcem, strzałki pokazują się tylko na szerokim ekranie.</target>
       </trans-unit>
 
+      <!-- lista sekcji (kilka rzędów na stronę) -->
+
+      <trans-unit id="quince.psection.csrf">
+        <source>Invalid security token, please try again.</source>
+        <target>Nieprawidłowy token bezpieczeństwa, spróbuj ponownie.</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.intro_sections">
+        <source>Rows of recommended products under the product list. Where they stand is set by the "Recommended products" item on the %link_open%Product lists%link_close% screen, and what stands in them you set here, separately for every page. A page can have more than one row: add another section, each with its own way of picking products, and drag the handle to set their order.</source>
+        <target>Rzędy polecanych produktów pod listą. O tym, gdzie stoją, decyduje pozycja „Polecane produkty” na ekranie %link_open%Listy produktów%link_close%, a co w nich stanie, ustawiasz tutaj, osobno dla każdej strony. Strona może mieć więcej niż jeden rząd: dodaj kolejną sekcję, każdą z własnym sposobem doboru produktów, i przeciągnij uchwyt, aby ustawić ich kolejność.</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.note_context_rows">
+        <source>Picks from products on this page, so the rows stay on the same subject as the list above them.</source>
+        <target>Dobiera spośród produktów z tej strony, więc rzędy zostają przy tym samym temacie co lista nad nimi.</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.note_global_rows">
+        <source>This page has no catalogue of its own, so the rows pick from the whole shop.</source>
+        <target>Ta strona nie ma własnego katalogu, więc rzędy dobierają produkty z całego sklepu.</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.add">
+        <source>Add a section</source>
+        <target>Dodaj sekcję</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.empty">
+        <source>No sections yet.</source>
+        <target>Nie ma jeszcze sekcji.</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.section">
+        <source>Section</source>
+        <target>Sekcja</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.drag">
+        <source>Drag to reorder</source>
+        <target>Przeciągnij, aby zmienić kolejność</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.settings">
+        <source>Settings</source>
+        <target>Ustawienia</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.remove">
+        <source>Remove</source>
+        <target>Usuń</target>
+      </trans-unit>
+
+      <!-- opis sekcji w zwiniętym pasku: „… · 8 produktów” -->
+      <trans-unit id="quince.psection.count_suffix">
+        <source>products</source>
+        <target>produktów</target>
+      </trans-unit>
+
     </body>
   </file>
 </xliff>
