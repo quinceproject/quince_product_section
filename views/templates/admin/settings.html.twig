@@ -1,0 +1,104 @@
+{# Ekran modułu w stylistyce silnika: ten sam layout, te same makra pól.
+   Moduł nie ma własnego CSS-u ani własnego sidebara — bierze je stąd.
+
+   Siedem kart, po jednej na stronę z listą produktów. Pod każdą stoi LISTA
+   sekcji — sklep dokłada ich tyle, ile chce, i ustawia kolejność przeciąganiem,
+   tak jak na stronie głównej. Całość jednej strony jedzie do serwera jednym
+   polem ukrytym jako JSON, bo liczba sekcji zmienia się przy każdym dołożeniu
+   albo usunięciu.
+
+   Projekt ekranu: `quince/makiety/panel-product-section-multi.html`. #}
+{% extends '@Modules/quince_engine/views/templates/admin/layout.html.twig' %}
+{% import '@Modules/quince_engine/views/templates/admin/_macros/icons.html.twig' as icons %}
+{% import '@Modules/quince_engine/views/templates/admin/_macros/fields.html.twig' as fields %}
+{% import '@Modules/quince_product_section/views/templates/admin/_macros/section-row.html.twig' as sekcje %}
+
+{% trans_default_domain 'Modules.Quinceproductsection.Admin' %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {# Wtyczka przeciągania musi wczytać się PRZED Alpine — inaczej Alpine
+       startuje bez niej i `x-sort` nie działa. Ta sama kolejność co na
+       stronie głównej. #}
+    <script src="{{ asset('../modules/quince_engine/views/js/vendor/alpine-sort.min.js') ~ qcVer }}" defer></script>
+    <script src="{{ asset('../modules/quince_engine/views/js/vendor/alpine.min.js') ~ qcVer }}" defer></script>
+    <script src="{{ asset('../modules/quince_product_section/views/js/product-section.js') ~ qcVer }}" defer></script>
+{% endblock %}
+
+{% block quince_intro %}
+    <div class="qc-alert qc-alert-info">
+        {{ icons.icon('info', 18, 'qc-alert-icon') }}
+        <div>
+            {{ 'Rows of recommended products under the product list. Where they stand is set by the "Recommended products" item on the %link_open%Product lists%link_close% screen, and what stands in them you set here, separately for every page. A page can have more than one row — add another section, each with its own way of picking products, and drag the handle to set their order.'|trans({
+                '%link_open%': '<a href="' ~ path('quince_listing') ~ '">',
+                '%link_close%': '</a>',
+            })|raw }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block quince_actions %}
+    <button type="submit" form="quince-product-section" class="qc-btn qc-btn-primary">
+        {{ icons.icon('check', 14) }} {{ 'Save changes'|trans }}
+    </button>
+{% endblock %}
+
+{% block quince_body %}
+<form id="quince-product-section" method="post" action="{{ path('quince_product_section_settings_save') }}"
+      class="qc-stack" x-data
+      data-languages="{{ languages|map(l => l.id_lang)|json_encode|e('html_attr') }}"
+      data-napisy="{{ { products: 'products'|trans } |json_encode|e('html_attr') }}">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('quince_product_section_settings_save') }}">
+
+    {% for klucz, etykieta in pageLabels %}
+        {% set cfg = pages[klucz] %}
+
+        <div class="qc-card" data-strona="{{ klucz }}">
+            <div class="qc-card-head">
+                <div>
+                    <div class="qc-card-title">{{ etykieta|trans }}</div>
+                    <div class="qc-card-desc">
+                        {% if klucz in contextPages %}
+                            {{ 'Picks from products on this page, so the rows stay on the same subject as the list above them.'|trans }}
+                        {% else %}
+                            {{ 'This page has no catalogue of its own, so the rows pick from the whole shop.'|trans }}
+                        {% endif %}
+                    </div>
+                </div>
+                {{ fields.toggle(klucz ~ '_enabled', cfg.enabled) }}
+            </div>
+
+            {# Znacznik wysyłki: odróżnia „sklep wszystko odznaczył" od „tej karty
+               w formularzu nie było". Bez niego nie dałoby się nic wyłączyć. #}
+            <input type="hidden" name="{{ klucz }}_submitted" value="1">
+            <input type="hidden" name="{{ klucz }}_sections" value="" data-pole-sekcje>
+
+            <div class="qc-card-body qc-stack" data-karta-cialo{{ cfg.enabled ? '' : ' hidden' }}>
+                <div style="display:flex; justify-content:flex-end">
+                    <button type="button" class="qc-btn qc-btn-outline qc-btn-sm" data-dodaj-sekcje>
+                        {{ icons.icon('plus', 14) }} {{ 'Add a section'|trans }}
+                    </button>
+                </div>
+
+                <div class="qc-empty" data-pusto{{ cfg.sections is not empty ? ' hidden' }}>
+                    <div class="qc-empty-text" style="padding:14px">{{ 'No sections yet.'|trans }}</div>
+                </div>
+
+                <div class="qc-repeater" x-sort x-sort:group="{{ klucz }}" data-sekcje>
+                    {% for sekcja in cfg.sections %}
+                        {{ sekcje.sekcja(sekcja, algorithms, languages, iconsRoute, klucz == 'CAT', loop.index) }}
+                    {% endfor %}
+                </div>
+
+                <template data-wzor-sekcji>
+                    {{ sekcje.sekcja({
+                        'id': '', 'active': true, 'algorithm': 'bestselling', 'count': 4, 'threshold': 0,
+                        'exclude_listing': true, 'subcats': false, 'title': {}, 'icon': '', 'icon_svg': '',
+                        'arrows': true, 'ids': ''
+                    }, algorithms, languages, iconsRoute, klucz == 'CAT', 0) }}
+                </template>
+            </div>
+        </div>
+    {% endfor %}
+</form>
+{% endblock %}

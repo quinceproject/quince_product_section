@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en-US" target-language="pl-PL" datatype="plaintext" original="ModulesQuinceproductsectionAdmin">
+    <body>
+
+      <trans-unit id="quince.psection.name">
+        <source>Quince Product Sections</source>
+        <target>Quince: sekcje produktowe</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.description">
+        <source>A "Recommended" row of products under the product list, set up separately for the category, brand, search, best sellers, new products, promotions and supplier pages. Requires Quince Engine.</source>
+        <target>Rząd polecanych produktów pod listą, ustawiany osobno dla strony kategorii, marki, wyników wyszukiwania, bestsellerów, nowości, promocji i dostawcy. Wymaga modułu Quince Engine.</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.nav">
+        <source>Product sections</source>
+        <target>Sekcje produktowe</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.intro">
+        <source>A row of recommended products under the product list. Where it stands is set by the "Recommended products" item on the %link_open%Product lists%link_close% screen, and what stands in it you set here, separately for every page.</source>
+        <target>Rząd polecanych produktów pod listą. O tym, gdzie stoi, decyduje pozycja „Polecane produkty” na ekranie %link_open%Listy produktów%link_close%, a co w nim stanie, ustawiasz tutaj, osobno dla każdej strony.</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.save">
+        <source>Save changes</source>
+        <target>Zapisz zmiany</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.saved">
+        <source>Settings saved.</source>
+        <target>Ustawienia zapisane.</target>
+      </trans-unit>
+
+      <!-- strony z listą produktów -->
+
+      <trans-unit id="quince.psection.page_cat">
+        <source>Category page</source>
+        <target>Strona kategorii</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.page_mfr">
+        <source>Brand page</source>
+        <target>Strona marki</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.page_search">
+        <source>Search results</source>
+        <target>Wyniki wyszukiwania</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.page_best">
+        <source>Best sellers page</source>
+        <target>Strona bestsellerów</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.page_new">
+        <source>New products page</source>
+        <target>Strona nowości</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.page_promo">
+        <source>Promotions page</source>
+        <target>Strona promocji</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.page_suppl">
+        <source>Supplier page</source>
+        <target>Strona dostawcy</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.note_context">
+        <source>Picks from products on this page, so the row stays on the same subject as the list above it.</source>
+        <target>Dobiera spośród produktów z tej strony, więc rząd zostaje przy tym samym temacie co lista nad nim.</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.note_global">
+        <source>This page has no catalogue of its own, so the row picks from the whole shop.</source>
+        <target>Ta strona nie ma własnego katalogu, więc rząd dobiera produkty z całego sklepu.</target>
+      </trans-unit>
+
+      <!-- sposoby doboru -->
+
+      <trans-unit id="quince.psection.alg">
+        <source>How products are picked</source>
+        <target>Jak dobierane są produkty</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.alg_bestselling">
+        <source>Best selling</source>
+        <target>Najlepiej sprzedające się</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.alg_newest">
+        <source>Newest</source>
+        <target>Najnowsze</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.alg_random">
+        <source>Random</source>
+        <target>Losowo</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.alg_price_asc">
+        <source>Cheapest first</source>
+        <target>Od najtańszych</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.alg_price_desc">
+        <source>Most expensive first</source>
+        <target>Od najdroższych</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.alg_viewed">
+        <source>Recently viewed by the customer</source>
+        <target>Ostatnio oglądane przez klienta</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.alg_manual">
+        <source>Hand-picked products</source>
+        <target>Wskazane produkty</target>
+      </trans-unit>
+
+      <!-- ustawienia rzędu -->
+
+      <trans-unit id="quince.psection.count">
+        <source>How many products</source>
+        <target>Ile produktów</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.threshold">
+        <source>Show the row from</source>
+        <target>Pokaż rząd od</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.threshold_hint">
+        <source>Below this many products the row does not show at all. 0 means it always shows.</source>
+        <target>Poniżej tylu produktów rząd nie pokazuje się wcale. 0 znaczy, że pokazuje się zawsze.</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.ids">
+        <source>Product numbers, separated by commas</source>
+        <target>Numery produktów, oddzielone przecinkami</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.ids_hint">
+        <source>Products show in the order you type them. The number is in the address of the product page in the catalogue.</source>
+        <target>Produkty pokazują się w kolejności, w jakiej je wpiszesz. Numer znajdziesz w adresie strony produktu w katalogu.</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.exclude">
+        <source>Leave out products already shown on the list above</source>
+        <target>Pomiń produkty, które stoją już na liście powyżej</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.subcats">
+        <source>Also take products from subcategories</source>
+        <target>Bierz też produkty z podkategorii</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.title">
+        <source>Heading above the row</source>
+        <target>Nagłówek nad rzędem</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.title_placeholder">
+        <source>Recommended</source>
+        <target>Polecane</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.icon">
+        <source>Icon next to the heading</source>
+        <target>Ikona przy nagłówku</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.arrows">
+        <source>Arrows for scrolling the row</source>
+        <target>Strzałki do przewijania rzędu</target>
+      </trans-unit>
+
+      <trans-unit id="quince.psection.arrows_hint">
+        <source>On a phone the row is always swiped by finger, arrows show on wide screens only.</source>
+        <target>Na telefonie rząd zawsze przesuwa się palcem, strzałki pokazują się tylko na szerokim ekranie.</target>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

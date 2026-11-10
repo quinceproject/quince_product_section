@@ -1,0 +1,21 @@
+# Ekran modułu w panelu silnika.
+#
+# _legacy_controller wskazuje zakładkę silnika, bo moduł bez niego i tak nie działa
+# (zadeklarowana zależność). Dzięki temu nie zakładamy własnej zakładki tylko po to,
+# żeby PrestaShop miał gdzie sprawdzić uprawnienia.
+
+quince_product_section_settings:
+  path: quince/product-sections
+  methods: [GET]
+  defaults:
+    _controller: Quince\ProductSection\Controller\Admin\SettingsController::indexAction
+    _legacy_controller: 'AdminQuince'
+    _legacy_link: 'AdminQuince'
+
+quince_product_section_settings_save:
+  path: quince/product-sections/save
+  methods: [POST]
+  defaults:
+    _controller: Quince\ProductSection\Controller\Admin\SettingsController::saveAction
+    _legacy_controller: 'AdminQuince'
+    _legacy_link: 'AdminQuince:save'
