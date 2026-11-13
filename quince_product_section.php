@@ -24,7 +24,7 @@ use Quince\ProductSection\Products\SectionProvider;
 use Quince\ProductSection\Settings\SectionSettings;
 
 /**
- * Quince Product Sections — sekcja „polecane" pod listą produktów.
+ * Quince Product Sections: sekcja „polecane" pod listą produktów.
  *
  * Siedem stron z listą produktów ma siedem osobnych ustawień, ale jedno
  * miejsce: element „Polecane produkty" w strefie pod listą, który sklep
@@ -172,7 +172,7 @@ class Quince_Product_Section extends Module
      * Sekcje pod listą produktów.
      *
      * Silnik woła ten hook z elementu listingu i podaje mu listę, pod którą
-     * sekcje stoją, oraz numer kategorii albo marki — żeby moduł nie musiał
+     * sekcje stoją, oraz numer kategorii albo marki, żeby moduł nie musiał
      * sięgać do pól kontrolera, które są chronione. Strona może mieć więcej
      * niż jedną sekcję: każda renderuje się osobno i staje jedna pod drugą,
      * w kolejności, w jakiej sklep je ustawił.
@@ -326,7 +326,7 @@ class Quince_Product_Section extends Module
     }
 
     /**
-     * Produkty w postaci, której oczekuje zajawka motywu — ta sama, co na
+     * Produkty w postaci, której oczekuje zajawka motywu: ta sama, co na
      * listingu, żeby karta wyglądała wszędzie tak samo.
      *
      * @param int[] $ids

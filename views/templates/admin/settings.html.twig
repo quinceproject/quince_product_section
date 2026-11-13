@@ -1,8 +1,8 @@
 {# Ekran modułu w stylistyce silnika: ten sam layout, te same makra pól.
-   Moduł nie ma własnego CSS-u ani własnego sidebara — bierze je stąd.
+   Moduł nie ma własnego CSS-u ani własnego sidebara; bierze je stąd.
 
    Siedem kart, po jednej na stronę z listą produktów. Pod każdą stoi LISTA
-   sekcji — sklep dokłada ich tyle, ile chce, i ustawia kolejność przeciąganiem,
+   sekcji: sklep dokłada ich tyle, ile chce, i ustawia kolejność przeciąganiem,
    tak jak na stronie głównej. Całość jednej strony jedzie do serwera jednym
    polem ukrytym jako JSON, bo liczba sekcji zmienia się przy każdym dołożeniu
    albo usunięciu.
@@ -17,7 +17,7 @@
 
 {% block javascripts %}
     {{ parent() }}
-    {# Wtyczka przeciągania musi wczytać się PRZED Alpine — inaczej Alpine
+    {# Wtyczka przeciągania musi wczytać się PRZED Alpine. Inaczej Alpine
        startuje bez niej i `x-sort` nie działa. Ta sama kolejność co na
        stronie głównej. #}
     <script src="{{ asset('../modules/quince_engine/views/js/vendor/alpine-sort.min.js') ~ qcVer }}" defer></script>

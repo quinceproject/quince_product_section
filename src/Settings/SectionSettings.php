@@ -19,7 +19,7 @@ use Quince\Engine\Settings\ConfigStore;
  *
  * Siedem stron z listą produktów, każda z własną LISTĄ sekcji: kategoria, marka,
  * wyniki wyszukiwania, bestsellery, nowości, promocje i dostawca. Sklep włącza
- * stronę osobno i dokłada pod nią tyle rzędów, ile chce — każdy z własnym
+ * stronę osobno i dokłada pod nią tyle rzędów, ile chce, każdy z własnym
  * sposobem doboru, licznikiem i nagłówkiem, w ustalonej przez siebie kolejności.
  *
  * Komplet jednej strony idzie do jednego wpisu w ustawieniach jako JSON:
@@ -66,7 +66,7 @@ final class SectionSettings
     /**
      * Sposoby doboru produktów.
      *
-     * „Najczęściej szukane" jest opcjonalne — zależy od `quince_search_score`.
+     * „Najczęściej szukane" jest opcjonalne: zależy od `quince_search_score`.
      * Kontroler chowa ten klucz z dropdownu, gdy modułu nie ma; tu zostaje,
      * żeby sekcja zapisana wcześniej dalej się odczytała (gaśnie po cichu,
      * patrz `SectionProvider::pobierz()`).
@@ -157,7 +157,7 @@ final class SectionSettings
         return $klucz === false ? null : (string) $klucz;
     }
 
-    /** Tytuł danej sekcji w podanym języku, a bez tłumaczenia — zapasowy. */
+    /** Tytuł danej sekcji w podanym języku, a bez tłumaczenia zapasowy. */
     public function sectionTitle(array $sekcja, int $idLang, string $zapasowy): string
     {
         $tytuly = is_array($sekcja['title'] ?? null) ? $sekcja['title'] : [];
@@ -240,7 +240,7 @@ final class SectionSettings
      * Jedna sekcja, uzupełniona i przycięta do dozwolonych wartości.
      *
      * Ta sama funkcja czyta zapisane ustawienia i sanuje dane przychodzące
-     * z formularza — przychodzą w tej samej postaci (tablica po `json_decode`).
+     * z formularza: przychodzą w tej samej postaci (tablica po `json_decode`).
      *
      * @param mixed $surowa
      *
@@ -256,7 +256,7 @@ final class SectionSettings
             $algorytm = self::DEFAULTS['algorithm'];
         }
 
-        // Tytuł jako `{"1":"Polecane","2":"Recommended"}` — jeden wpis na wszystkie języki.
+        // Tytuł jako `{"1":"Polecane","2":"Recommended"}`, jeden wpis na wszystkie języki.
         $tytul = [];
 
         foreach ((is_array($surowa['title'] ?? null) ? $surowa['title'] : []) as $idLang => $tekst) {

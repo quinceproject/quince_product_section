@@ -1,5 +1,5 @@
 /**
- * Ekran „Sekcje produktowe" — to, czego nie obsługuje sam znacznik.
+ * Ekran „Sekcje produktowe": to, czego nie obsługuje sam znacznik.
  *
  * Siedem osobnych list, jedna na stronę z produktami. Każda działa tak samo
  * jak sekcje strony głównej (ten sam wzorzec, bez zagnieżdżonych kolumn, bo

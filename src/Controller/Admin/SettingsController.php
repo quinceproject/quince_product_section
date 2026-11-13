@@ -76,9 +76,8 @@ class SettingsController extends QuinceController
      * Sposoby doboru dostępne w dropdownie.
      *
      * „Najczęściej szukane" znika z listy, gdy `quince_search_score` nie jest
-     * zainstalowany — wybranie trybu, który i tak nic by nie pokazał, tylko
-     * myli sprzedawcę. Sekcja zapisana wcześniej, zanim moduł odinstalowano,
-     * dalej działa (gaśnie po cichu — patrz `SectionProvider::pobierz()`),
+     * zainstalowany. Sekcja zapisana wcześniej, zanim moduł odinstalowano,
+     * dalej działa (gaśnie po cichu, patrz `SectionProvider::pobierz()`),
      * po prostu nie da się jej wybrać od nowa z tego ekranu.
      *
      * @return array<string,string>
@@ -98,7 +97,7 @@ class SettingsController extends QuinceController
      * Sekcje z kodem SVG zapisanej ikony.
      *
      * Wybierak pokazuje ikonę od razu po otwarciu ekranu, a nie dopiero po
-     * dopytaniu serwera — inaczej pole wyglądałoby na puste przy każdym wejściu.
+     * dopytaniu serwera. Inaczej pole wyglądałoby na puste przy każdym wejściu.
      *
      * @param array<string,array{enabled:bool,sections:array<int,array<string,mixed>>}> $strony
      *

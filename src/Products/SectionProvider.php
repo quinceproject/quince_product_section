@@ -174,7 +174,7 @@ final class SectionProvider
     ): array {
         // „Najczęściej szukane" zależy od `quince_search_score`. Bez modułu
         // sekcja gaśnie po cichu, zamiast wywalić zapytanie na nieistniejącej
-        // tabeli — sklep, który go odinstalował, dostaje przypadkowy dobór,
+        // tabeli: sklep, który go odinstalował, dostaje przypadkowy dobór,
         // nie błąd.
         if ($sposob === 'searched' && !\Module::getInstanceByName('quince_search_score')) {
             $sposob = 'random';

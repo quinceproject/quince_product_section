@@ -1,5 +1,5 @@
 {**
- * Quince Product Sections — rząd polecanych pod listą produktów.
+ * Quince Product Sections: rząd polecanych pod listą produktów.
  *
  * Moduł dobiera produkty, a wygląd bierze z motywu: ta sama karuzela i ta sama
  * zajawka, co akcesoria i produkty do dokupienia.
