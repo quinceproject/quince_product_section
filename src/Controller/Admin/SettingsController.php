@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Quince\ProductSection\Controller\Admin;
 
 use Module;
+use PrestaShopBundle\Security\Attribute\AdminSecurity;
 use Quince\Engine\Controller\Admin\QuinceController;
 use Quince\Engine\Ui\IconLibrary;
 use Quince\ProductSection\Settings\SectionSettings;
@@ -33,6 +34,7 @@ class SettingsController extends QuinceController
     {
     }
 
+    #[AdminSecurity("is_granted('read', request.get('_legacy_controller'))", message: 'You do not have permission to view this.')]
     public function indexAction(): Response
     {
         $strony = $this->settings->all();
@@ -58,6 +60,7 @@ class SettingsController extends QuinceController
         );
     }
 
+    #[AdminSecurity("is_granted('update', request.get('_legacy_controller'))", message: 'You do not have permission to change this.')]
     public function saveAction(Request $request): RedirectResponse
     {
         if (!$this->isCsrfTokenValid('quince_product_section_settings_save', $request->request->get('_csrf_token'))) {
